@@ -5,7 +5,7 @@ from tkinter import messagebox
 import threading
 import json
 
-SerialObj = serial.Serial('COM3')  # COMxx   format on Windows
+SerialObj = serial.Serial('COM4')  # COMxx   format on Windows
 
 SerialObj.baudrate = 9600  # set Baud rate to 9600
 SerialObj.bytesize = 8  # Number of data bits = 8
@@ -14,9 +14,7 @@ SerialObj.stopbits = 1  # Number of Stop bits = 1
 
 time.sleep(3)  # Only needed for Arduino,For AVR/PIC/MSP430 & other Micros not needed
 
-voltage = StringVar(value="0")
-color = StringVar(value="yellow")
-message = StringVar(value="SIN LECTURA")
+
 
 
 def on_closing():
@@ -43,6 +41,10 @@ def lectura_serial():
 
 
 root = Tk()
+
+voltage = StringVar(value="0")
+color = StringVar(value="yellow")
+message = StringVar(value="SIN LECTURA")
 
 frame = Frame(root, height=600, width=1200)
 frame.pack(fill='both', expand=1)

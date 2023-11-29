@@ -11,7 +11,7 @@ import serial
 import time
 import json
 
-SerialObj = serial.Serial('COM3')  # COMxx   format on Windows
+SerialObj = serial.Serial('COM4')  # COMxx   format on Windows
 
 # /dev/ttyUSBx format on Linux
 #

@@ -10,7 +10,7 @@
 import serial
 import time
 
-SerialObj = serial.Serial('COM3')  # COMxx   format on Windows
+SerialObj = serial.Serial('COM4')  # COMxx   format on Windows
 
 # /dev/ttyUSBx format on Linux
 #
@@ -18,7 +18,7 @@ SerialObj = serial.Serial('COM3')  # COMxx   format on Windows
 # SerialObj = serial.Serial('/dev/ttyUSB0')
 
 SerialObj.baudrate = 9600  # set Baud rate to 9600
-SerialObj.bytesize = 8  # Number of data bits = 8
+SerialObj.bytesize = 8  # Number of data bits = 82
 SerialObj.parity = 'N'  # No parity
 SerialObj.stopbits = 1  # Number of Stop bits = 1
 

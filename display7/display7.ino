@@ -1,5 +1,5 @@
 // Tutorial - https://www.xanthium.in/Cross-Platform-serial-communication-using-Python-and-PySerial
-int leds[7] = { 9,  7,  8,  5,  6,  3,  4};
+int leds[7] = { 9,  5,  6,  3,  4,  7,  8};
 //              A   B   C   D   E   F   G
 
 void setup()

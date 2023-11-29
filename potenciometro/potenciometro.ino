@@ -13,26 +13,26 @@ float last=0;
 void loop() {
   // read the input on analog pin 0:
   int sensorValue = analogRead(A0);
-  float voltage= sensorValue * (5.0 / 1023.0);
+  float voltage= sensorValue * (5.0 / 1023.0);  // 1.2 2.5
   // print out the value you read:
   if(last!=voltage){
 
-  StaticJsonDocument<200> doc;
-  doc["voltage"] = voltage;
+  StaticJsonDocument<200> data;
+  data["voltage"] = voltage;
   
   if(voltage>4){
-    doc["alert"]="ALTO VOLTAJE";
-    doc["color"]="red";
+    data["alert"]="ALTO VOLTAJE";
+    data["color"]="red";
   }else if(voltage <= 4 and voltage>=1.5){
-    doc["alert"]="VOLTAJE NORMAL";
-    doc["color"]="green";
+    data["alert"]="VOLTAJE NORMAL";
+    data["color"]="green";
   }else{
-    doc["alert"]="VOLTAGE BAJO";
-    doc["color"]="orange";
+    data["alert"]="VOLTAGE BAJO";
+    data["color"]="orange";
   }
 
 
-  serializeJson(doc, Serial);
+  serializeJson(data, Serial);
   // The above line prints:
   // {"sensor":"gps","time":1351824120,"data":[48.756080,2.302038]}
 
@@ -41,7 +41,7 @@ void loop() {
 
   // Generate the prettified JSON and send it to the Serial port.
   //
-  //serializeJsonPretty(doc, Serial);
+  //serializeJsonPretty(data, Serial);
 
   
     
